@@ -24,7 +24,7 @@ class USA extends React.Component {
             <div>
                 <NavBar goHome={()=> this.goHome()} goWorld={()=>this.goWorld()} goUsa={this.goUsa} />
                 <div className='row header-row'>
-                    <h2>USA</h2>
+                    <h2>United States</h2>
                 </div>
             </div>
         )
