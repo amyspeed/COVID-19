@@ -3,7 +3,7 @@ An analytics dashboard with live COVID-19 Statistics
 
 Created as a fun front end project during the Austin, TX "Shelter-in-place" order.
 
-**View Live: [covid-19.amyspeed.dev](https://covid-19.amyspeed.dev)**
+**View Live: [https://covid-19.amyspeed.dev](https://covid-19.amyspeed.dev)**
 
 ## Screenshot here
 
