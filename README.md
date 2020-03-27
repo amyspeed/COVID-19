@@ -1,5 +1,5 @@
 # COVID-19
-A dashboard for charts and maps displaying live COVID-19 Statistics
+An analytics dashboard with live COVID-19 Statistics
 
 Created as a fun front end project during the Austin, TX "Shelter-in-place" order.
 
