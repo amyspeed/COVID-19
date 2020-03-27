@@ -1,7 +1,7 @@
-### COVID-19
+# COVID-19
 A dashboard for charts and maps displaying live COVID-19 Statistics
 
-Created as a front end react project during the Austin, TX "Shelter-in-place" order.
+Created as a fun front end project during the Austin, TX "Shelter-in-place" order.
 
 ## Screenshot here
 
@@ -12,17 +12,22 @@ Created as a front end react project during the Austin, TX "Shelter-in-place" or
 
 ## 3RD Party APIs
 * https://corona.lmao.ninja
-* https://api.covid19api.com
+* https://covid19api.com/?ref=producthunt#details
 
-# Notes to self regarding deployment
-This project is hosted with github pages using a custom DNS. DNS records are managed by Google Domains. After every commit:
+## Notes to self regarding deployment
+This project is hosted with github pages using a custom DNS. DNS records are managed by Google Domains.
+
+**After every commit:**
 * Push changes to master
-``` git push ```
+
+   ``` git push ```
 * Make changes live on pages
-``` npm run deploy ```
+
+   ``` npm run deploy ```
 * Change custom domain in "settings"
-- Go to settings
-- enter covid-19.amyspeed.dev in the custom domain prompt and SAVE
-- make sure the box is checked for Enforce HTTPS
+
+   1. Go to settings
+   2. Enter covid-19.amyspeed.dev in the custom domain prompt and SAVE
+   3. Make sure the box is checked for Enforce HTTPS
 
 
