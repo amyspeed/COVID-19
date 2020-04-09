@@ -4,6 +4,7 @@ h2 {
   font-size: 35px;
   font-weight: 200;
   margin-top: 30px;
+  text-align: center;
 }
 
 h3 {
@@ -25,13 +26,6 @@ p {
 .header-row {
   padding-top: 0px;
   padding-bottom: 30px;
-}
-
-.error-message {
-  color: rgb(197, 21, 21);
-  margin-top: 50px;
-  margin-bottom: 30px;
-  font-size: 30px;
 }
 
 .content {

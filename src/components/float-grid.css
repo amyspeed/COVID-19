@@ -3,7 +3,7 @@
   }
   
   .row {
-    max-width: 1300px;
+    max-width: 1600px;
     padding-left: 5%;
     padding-right: 5%;
     margin: auto;
@@ -20,20 +20,15 @@
     clear: both;
   }
   
-  .col-3, .col-4, .col-6, .col-12 {
+  .col-3, .col-4, .col-6, .col-8, .col-12 {
     float: left;
     padding-left: 1.04166666%;
     padding-right: 1.041666666%;
   }
   
   /*Mobile defaults */
-  .col-3, .col-4, .col-6, .col-12 {
+  .col-3, .col-4, .col-6, .col-8, .col-12 {
     width: 100%;
-  }
-
-  @media only screen and (min-width: 580px) {
-  .col-4 {
-    width: 50%;
   }
   
   @media only screen and (min-width: 800px) {
@@ -46,8 +41,10 @@
     .col-6 {
       width: 50%;
     }
+    .col-8 {
+      width: 75%;
+    }
     .col-12 {
       width: 100%
     }
-  }
 }

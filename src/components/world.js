@@ -5,6 +5,8 @@ import NavBar from './navBar';
 import SummeryChart from './charts/worldCharts/summeryChart';
 import ClosedCasesChart from './charts/worldCharts/closedCasesChart';
 import ActiveCasesChart from './charts/worldCharts/activeCasesChart';
+import CountriesChart from './charts/worldCharts/countriesChart';
+import WorldMap from './charts/worldCharts/worldMap';
 
 class World extends React.Component {
 
@@ -33,18 +35,22 @@ class World extends React.Component {
         if (this.props.summery) {
             console.log(this.props.summery);
         }
+        if (this.props.countries) {
+            console.log(this.props.countries.data);
+        }
         return(
             <div>
                 <NavBar goHome={()=> this.goHome()} goWorld={() => this.goWorld()} goUsa={()=> this.goUsa()} />
                 <div className='content'>
                     <div className='row header-row'>
                         <h2>World</h2>
+                        <SummeryChart summery={this.props.summery} />
                         <div className='row'>
-                            <div className='col-6'>
-                                <SummeryChart summery={this.props.summery} />
+                            <div className='col-3' style={{ position: "relative"}}>
+                                <CountriesChart countries={this.props.countries} />
                             </div>
-                            <div className='col-6'>
-                                <ClosedCasesChart summery={this.props.summery} />
+                            <div className='col-8'>
+                                <WorldMap countries={this.props.countries} />
                             </div>
                         </div>
                         <div className='row'>
@@ -52,7 +58,7 @@ class World extends React.Component {
                                 <ActiveCasesChart summery={this.props.summery} />
                             </div>
                             <div className='col-6'>
-                                <SummeryChart summery={this.props.summery} />
+                                <ClosedCasesChart summery={this.props.summery} />
                             </div>
                         </div>
                     </div>
@@ -63,7 +69,8 @@ class World extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    summery: state.summery
+    summery: state.summery,
+    countries: state.countries
 });
 
 export default connect(mapStateToProps)(World);

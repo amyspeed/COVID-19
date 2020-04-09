@@ -1,5 +1,7 @@
 import { getSummery } from './summery';
+import { getCountryStats } from './countryStats';
 
 export const fetchAllWorldData = () => (dispatch) => {
-    return dispatch(getSummery());
+    dispatch(getSummery());
+    dispatch(getCountryStats());
 }

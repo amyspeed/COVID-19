@@ -7,25 +7,37 @@ class SummeryChart extends React.Component {
     render() {
         const summery = this.props.summery;
         return (
-            <div className='chart-card'>
-                { !summery.data && !summery.error  ?
-                        <div className='load-container'>
-                            <ScaleLoader />
-                        </div> : null
-                }
-                {  summery.data ?
-                    <div>
-                        <h3>Summery</h3>
-                        <div>
-                            { summery.data.cases ? <p>Total Confirmed Cases: {summery.data.cases.toLocaleString()}</p> : null }
-                            { summery.data.deaths ? <p>Total Deaths: {summery.data.deaths.toLocaleString()}</p> : null }
-                            { summery.data.todayCases ? <p>New Cases Today: {summery.data.todayCases.toLocaleString()}</p> : null }
-                            { summery.data.affectedCountries ? <p>Affected Countries: {summery.data.affectedCountries.toLocaleString()}</p> : null }
-                        </div>
+            <div className='row'>
+                <div className='col-4'>
+                    <div className='chart-card'>
+                        { !summery.data && !summery.error  ?
+                            <div className='load-container'>
+                                <ScaleLoader />
+                            </div> : null
+                        }
+                        { summery.data && summery.data.cases ? <p><span className='important-text'>{summery.data.cases.toLocaleString()}</span> Confirmed Cases</p> : null }
                     </div>
-                    : null
-                }
-
+                </div>
+                <div className='col-4'>
+                    <div className='chart-card'>
+                        { !summery.data && !summery.error  ?
+                            <div className='load-container'>
+                                <ScaleLoader />
+                            </div> : null
+                        }
+                        { summery.data && summery.data.deaths ? <p><span className='important-text'>{summery.data.deaths.toLocaleString()}</span> Total Deaths</p> : null }
+                    </div>
+                </div>
+                <div className='col-4'>
+                    <div className='chart-card'>
+                        { !summery.data && !summery.error  ?
+                            <div className='load-container'>
+                                <ScaleLoader />
+                            </div> : null
+                        }
+                        { summery.data && summery.data.todayCases ? <p><span className='important-text'>{summery.data.todayCases.toLocaleString()}</span> New Cases Today</p> : null }
+                    </div>
+                </div>
             </div>
         )
     }

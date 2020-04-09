@@ -56,9 +56,10 @@ class ClosedCasesChart extends React.Component {
                 }
                 {  summery.data ?
                     <div>
-                        <h3>Closed Cases</h3>
+                        <h3>
+                            Closed Cases <span className='important-text'>{ summery.data.deaths && summery.data.recovered ? this.totalClosed(summery.data.deaths, summery.data.recovered) : null }</span>
+                        </h3>
                         <div>
-                            { summery.data.deaths && summery.data.recovered ? <p>Total Closed Cases: {this.totalClosed(summery.data.deaths, summery.data.recovered)}</p> : null }
                             { summery.data.deaths ? <p>Total Deaths: {summery.data.deaths.toLocaleString()}</p> : null }
                             { summery.data.recovered ? <p>Total Recovered: {summery.data.recovered.toLocaleString()}</p> : null }
                         </div>
@@ -67,7 +68,7 @@ class ClosedCasesChart extends React.Component {
                                 <Tooltip />
                                 <Pie 
                                     data={this.state.data} 
-                                    startAngle={180}
+                                    startAngle={360}
                                     endAngle={0}
                                     dataKey='value' 
                                     nameKey='name'
