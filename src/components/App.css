@@ -33,3 +33,9 @@ p {
   margin-bottom: 30px;
   font-size: 30px;
 }
+
+.content {
+  background: linear-gradient(rgb(215, 215, 215), white);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
