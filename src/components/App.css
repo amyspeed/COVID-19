@@ -1,5 +1,6 @@
 .App {
   position: relative;
+  min-height: 100vh;
 }
 
 h2 {
@@ -34,6 +35,5 @@ p {
 .content {
   background: linear-gradient(rgb(215, 215, 215), white);
   background-repeat: no-repeat;
-  min-height: 100vh;
   padding-bottom: 50px;
 }

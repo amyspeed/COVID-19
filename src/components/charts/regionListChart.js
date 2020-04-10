@@ -23,7 +23,7 @@ class RegionListChart extends React.Component {
             <div className='list-card'>
                 { !regions.data && !regions.error  ?
                         <div className='load-container'>
-                            <ScaleLoader />
+                            <ScaleLoader color={'#757575'} />
                         </div> : null
                 }
                 {  regions.data ?

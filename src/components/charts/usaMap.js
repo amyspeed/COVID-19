@@ -114,7 +114,7 @@ class UsaMap extends React.Component {
             <div className='chart-card'>
                 { !states.data && !states.error  ?
                         <div className='load-container'>
-                            <ScaleLoader />
+                            <ScaleLoader color={'#757575'} />
                         </div> : null
                 }
                 {  states.data ?

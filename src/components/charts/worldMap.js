@@ -45,7 +45,7 @@ class WorldMap extends React.Component {
             <div className='chart-card'>
                 { !countries.data && !countries.error  ?
                         <div className='load-container'>
-                            <ScaleLoader />
+                            <ScaleLoader color={'#757575'} />
                         </div> : null
                 }
                 {  countries.data ?

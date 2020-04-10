@@ -51,7 +51,7 @@ class ClosedCasesChart extends React.Component {
             <div className='chart-card'>
                 { !summery.data && !summery.error  ?
                         <div className='load-container'>
-                            <ScaleLoader />
+                            <ScaleLoader color={'#757575'} />
                         </div> : null
                 }
                 {  summery.data ?
