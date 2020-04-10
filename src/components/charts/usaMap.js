@@ -1,27 +1,96 @@
 import React from 'react';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 import { VectorMap } from "react-jvectormap"
-import '../chart.css';
+import './chart.css';
 
-class WorldMap extends React.Component {
+const states_hash =
+{
+  'Alabama': 'AL',
+  'Alaska': 'AK',
+  'American Samoa': 'AS',
+  'Arizona': 'AZ',
+  'Arkansas': 'AR',
+  'California': 'CA',
+  'Colorado': 'CO',
+  'Connecticut': 'CT',
+  'Delaware': 'DE',
+  'District Of Columbia': 'DC',
+  'Federated States Of Micronesia': 'FM',
+  'Florida': 'FL',
+  'Georgia': 'GA',
+  'Guam': 'GU',
+  'Hawaii': 'HI',
+  'Idaho': 'ID',
+  'Illinois': 'IL',
+  'Indiana': 'IN',
+  'Iowa': 'IA',
+  'Kansas': 'KS',
+  'Kentucky': 'KY',
+  'Louisiana': 'LA',
+  'Maine': 'ME',
+  'Marshall Islands': 'MH',
+  'Maryland': 'MD',
+  'Massachusetts': 'MA',
+  'Michigan': 'MI',
+  'Minnesota': 'MN',
+  'Mississippi': 'MS',
+  'Missouri': 'MO',
+  'Montana': 'MT',
+  'Nebraska': 'NE',
+  'Nevada': 'NV',
+  'New Hampshire': 'NH',
+  'New Jersey': 'NJ',
+  'New Mexico': 'NM',
+  'New York': 'NY',
+  'North Carolina': 'NC',
+  'North Dakota': 'ND',
+  'Northern Mariana Islands': 'MP',
+  'Ohio': 'OH',
+  'Oklahoma': 'OK',
+  'Oregon': 'OR',
+  'Palau': 'PW',
+  'Pennsylvania': 'PA',
+  'Puerto Rico': 'PR',
+  'Rhode Island': 'RI',
+  'South Carolina': 'SC',
+  'South Dakota': 'SD',
+  'Tennessee': 'TN',
+  'Texas': 'TX',
+  'Utah': 'UT',
+  'Vermont': 'VT',
+  'Virgin Islands': 'VI',
+  'Virginia': 'VA',
+  'Washington': 'WA',
+  'West Virginia': 'WV',
+  'Wisconsin': 'WI',
+  'Wyoming': 'WY'
+}
+
+class UsaMap extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             mapData: {
-                US: 0
+                TX: 0
             },
             updated: false
         }
     }
 
     componentDidUpdate() {
-        if (!this.state.updated && this.props.countries && this.props.countries.data) {
+        if (!this.state.updated && this.props.states && this.props.states.data) {
             // let's create an object for our map 
             let dataObj = {};
-            for (let i = 0; i < this.props.countries.data.length; i++) {
+            for (let i = 0; i < this.props.states.data.length; i++) {
+
                 const newObj = {};
-                const key = this.props.countries.data[i].countryInfo.iso2;
-                newObj[key] = this.props.countries.data[i].cases;
+                // Find the state code
+                const stateName = this.props.states.data[i].state;
+                // Assign the state code as the key of the new object
+                const newObjKey = 'US-' + states_hash[stateName]
+                // The value becomes the number of cases in the state
+                newObj[newObjKey] = this.props.states.data[i].cases;
+                // Add the new object into our larger data object
                 dataObj = Object.assign(dataObj, newObj);
             }
             console.log(dataObj);
@@ -40,18 +109,18 @@ class WorldMap extends React.Component {
     
 
     render() {
-        const countries = this.props.countries;
+        const states = this.props.states;
         return (
             <div className='chart-card'>
-                { !countries.data && !countries.error  ?
+                { !states.data && !states.error  ?
                         <div className='load-container'>
                             <ScaleLoader />
                         </div> : null
                 }
-                {  countries.data ?
+                {  states.data ?
                     <div style={{width: "100%"}}>
                         <VectorMap
-                            map={"world_mill"}
+                            map={"us_aea"}
                             backgroundColor="#FFFFFF"
                             zoomOnScroll={false}
                             containerStyle={{
@@ -79,6 +148,11 @@ class WorldMap extends React.Component {
                                 }}
                             regionsSelectable={false}
                             onRegionTipShow={(e, el, code) => this.customToolTip(e, el, code) }
+                            mapUrlByCode = {function(code, multiMap){
+                                return '/js/us-counties/jquery-jvectormap-data-'+
+                                       code.toLowerCase()+'-'+
+                                       multiMap.defaultProjection+'-en.js';
+                              }}
                             series={{
                                 regions: [
                                     {
@@ -99,4 +173,4 @@ class WorldMap extends React.Component {
 
 }
 
-export default WorldMap;
+export default UsaMap;

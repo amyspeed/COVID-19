@@ -1,5 +1,5 @@
 import React from 'react';
-import '../chart.css';
+import './chart.css';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 
 class SummeryChart extends React.Component {

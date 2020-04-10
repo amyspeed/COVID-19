@@ -1,8 +1,8 @@
 import React from 'react';
 import ScaleLoader from 'react-spinners/ScaleLoader';
-import '../chart.css';
+import './chart.css';
 
-class CountriesChart extends React.Component {
+class RegionListChart extends React.Component {
 
     sortData(data) {
         const sortedArr = [...data].sort((a, b) => {
@@ -10,29 +10,29 @@ class CountriesChart extends React.Component {
             if (a.cases > b.cases) return -1;
             return 0
         });
-        return sortedArr.map((country, index) => (
+        return sortedArr.map((region, index) => (
             <div key={index}>
-                <p><span className='important-text'>{country.cases.toLocaleString()}</span> {country.country}</p>
+                <p><span className='important-text'>{region.cases.toLocaleString()}</span> {region.country ? region.country : region.state ? region.state : null}</p>
             </div>
         ))
     }
 
     render() {
-        const countries = this.props.countries;
+        const regions = this.props.regions;
         return (
             <div className='list-card'>
-                { !countries.data && !countries.error  ?
+                { !regions.data && !regions.error  ?
                         <div className='load-container'>
                             <ScaleLoader />
                         </div> : null
                 }
-                {  countries.data ?
+                {  regions.data ?
                     <div>
                         <div style={{ position: "absolute", backgroundColor: 'white', width: '80%', top: 0, left: 20}}>
                             <h3>Confirmed Cases</h3>
                         </div>
                         <div style={{ marginTop: 50,}}>
-                            {this.sortData(countries.data)}
+                            {this.sortData(regions.data)}
                         </div>
                     </div>
                     : null
@@ -44,4 +44,4 @@ class CountriesChart extends React.Component {
 
 }
 
-export default CountriesChart;
+export default RegionListChart;

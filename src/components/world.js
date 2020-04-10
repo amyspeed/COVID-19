@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchAllWorldData } from '../actions/worldData';
+import { fetchAllUsaData } from '../actions/usaData';
 import NavBar from './navBar';
-import SummeryChart from './charts/worldCharts/summeryChart';
-import ClosedCasesChart from './charts/worldCharts/closedCasesChart';
-import ActiveCasesChart from './charts/worldCharts/activeCasesChart';
-import CountriesChart from './charts/worldCharts/countriesChart';
-import WorldMap from './charts/worldCharts/worldMap';
+import SummeryChart from './charts/summeryChart';
+import ClosedCasesChart from './charts/closedCasesChart';
+import ActiveCasesChart from './charts/activeCasesChart';
+import RegionListChart from './charts/regionListChart';
+import WorldMap from './charts/worldMap';
 
 class World extends React.Component {
 
@@ -28,16 +29,12 @@ class World extends React.Component {
     }
 
     goUsa = () => {
+        this.props.dispatch(fetchAllWorldData());
+        this.props.dispatch(fetchAllUsaData());
         this.props.history.push('/usa');
     }
 
     render() {
-        if (this.props.summery) {
-            console.log(this.props.summery);
-        }
-        if (this.props.countries) {
-            console.log(this.props.countries.data);
-        }
         return(
             <div>
                 <NavBar goHome={()=> this.goHome()} goWorld={() => this.goWorld()} goUsa={()=> this.goUsa()} />
@@ -47,7 +44,7 @@ class World extends React.Component {
                         <SummeryChart summery={this.props.summery} />
                         <div className='row'>
                             <div className='col-3' style={{ position: "relative"}}>
-                                <CountriesChart countries={this.props.countries} />
+                                <RegionListChart regions={this.props.countries} />
                             </div>
                             <div className='col-8'>
                                 <WorldMap countries={this.props.countries} />

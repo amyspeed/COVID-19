@@ -3,7 +3,7 @@ import ScaleLoader from 'react-spinners/ScaleLoader';
 import {
     PieChart, Pie, Label, Tooltip, ResponsiveContainer, Cell
   } from 'recharts';
-import '../chart.css';
+import './chart.css';
 
 class ClosedCasesChart extends React.Component {
     constructor(props){

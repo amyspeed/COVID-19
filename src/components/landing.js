@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import NavBar from './navBar';
 import { fetchAllWorldData } from '../actions/worldData';
+import { fetchAllUsaData } from '../actions/usaData';
 
 class Landing extends React.Component {
 
@@ -19,6 +20,7 @@ class Landing extends React.Component {
     }
 
     goUsa = () => {
+        this.props.dispatch(fetchAllUsaData());
         this.props.history.push('/usa');
     }
 
@@ -32,10 +34,7 @@ class Landing extends React.Component {
                 <div className='content'>
                     <div className='row header-row'>
                         <h2>Welcome and stuff</h2>
-                        <h3>Maybe some news and links here... tbd</h3>
-                        <div>
-                            <p>jfskdjflskd</p>
-                        </div>
+                        <h3>Maybe some news and links here... </h3>
                     </div>
                 </div>
             </div>
