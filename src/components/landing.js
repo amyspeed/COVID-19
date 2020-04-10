@@ -30,7 +30,7 @@ class Landing extends React.Component {
         }
         return(
             <div>
-                <NavBar goHome={this.goHome} goWorld={() => this.goWorld()} goUsa={() => this.goUsa()} />
+                <NavBar pathName={this.props.match.path} goHome={this.goHome} goWorld={() => this.goWorld()} goUsa={() => this.goUsa()} />
                 <div className='content'>
                     <div className='row header-row'>
                         <h2>Welcome and stuff</h2>

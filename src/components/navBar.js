@@ -42,8 +42,8 @@ class NavBar extends React.Component {
         if (direction === 'up') {
             cssClass = "tab up";
             if (
-                (window.location.pathname === '/world' && worldOrUSa === 'world') || 
-                (window.location.pathname === '/usa' && worldOrUSa === 'usa')
+                (this.props.pathName === '/world' && worldOrUSa === 'world') || 
+                (this.props.pathName === '/usa' && worldOrUSa === 'usa')
                 ) {
                 cssClass = "tab up selected";
             }
@@ -51,8 +51,8 @@ class NavBar extends React.Component {
         else {
             cssClass = "tab down";
             if (
-                (window.location.pathname === '/world' && worldOrUSa === 'world') || 
-                (window.location.pathname === '/usa' && worldOrUSa === 'usa')
+                (this.props.pathName === ('/world') && worldOrUSa === 'world') || 
+                (this.props.pathName === ('/usa') && worldOrUSa === 'usa')
                 ) {
                 cssClass = "tab down selected";
             }

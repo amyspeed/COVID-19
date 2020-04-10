@@ -37,7 +37,7 @@ class World extends React.Component {
     render() {
         return(
             <div>
-                <NavBar goHome={()=> this.goHome()} goWorld={() => this.goWorld()} goUsa={()=> this.goUsa()} />
+                <NavBar pathName={this.props.match.path} goHome={()=> this.goHome()} goWorld={() => this.goWorld()} goUsa={()=> this.goUsa()} />
                 <div className='content'>
                     <div className='row header-row'>
                         <h2>World</h2>
