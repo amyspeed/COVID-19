@@ -40,7 +40,7 @@ class ActiveCasesChart extends React.Component {
 
     render() {
         const summery = this.props.summery;
-        const COLORS = ["#8b1414", "#5c5c5c"];
+        const COLORS = ["#a70101", "#c6c6c6"];
 
         return (
             <div className='chart-card'>
@@ -51,10 +51,10 @@ class ActiveCasesChart extends React.Component {
                 }
                 {  summery.data ?
                     <div>
-                        <h3>Active Cases</h3>
-                        <div>
-                            { summery.data.active ? <p>Active Infections: {summery.data.active.toLocaleString()}</p> : null }
-                            { summery.data.critical ? <p>Critical Cases: {summery.data.critical.toLocaleString()}</p> : null }
+                        <h3>Active Cases <span className='important-text'>{summery.data.active ? summery.data.active.toLocaleString() : null}</span></h3>
+                        <div className='data-details'>
+                            { summery.data.critical ? <p>Critical/Serious Cases: {summery.data.critical.toLocaleString()}</p> : null }
+                            { this.state.data ? <p>Mild Infections: {this.state.data[1].value.toLocaleString()}</p> : null }
                         </div>
                         <ResponsiveContainer width="100%" minWidth={300} height={300}>
                             <PieChart>

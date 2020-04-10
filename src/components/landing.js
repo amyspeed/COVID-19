@@ -23,6 +23,9 @@ class Landing extends React.Component {
     }
 
     render() {
+        if (this.props.showNavTwo) {
+            console.log('show nav 2')
+        }
         return(
             <div>
                 <NavBar goHome={this.goHome} goWorld={() => this.goWorld()} goUsa={() => this.goUsa()} />

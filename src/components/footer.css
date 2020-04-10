@@ -1,0 +1,22 @@
+.footer-bar {
+    /* background-image: linear-gradient(to left, rgb(139, 20, 20), rgba(0,0,0,1)); */
+    background-color: rgb(117, 117, 117);
+    /* background-image: linear-gradient( rgb(199, 199, 199), rgb(150, 150, 150)); */
+
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 15px;
+    padding-top: 6px;
+}
+
+.footer-text {
+    color: #FFFFFF;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+a {
+    color: #FFFFFF;
+}

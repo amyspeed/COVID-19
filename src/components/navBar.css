@@ -1,11 +1,11 @@
-.bar {
+/* Main Nav that scrolls with page: */
+.bar-1 {
     background-image: linear-gradient(to left, rgb(139, 20, 20), rgba(0,0,0,1));
     text-align: left;
     position: relative;
-    /* box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2); */
 }
 
-h1 {
+.home-text {
     position: absolute;
     font-size: 30px;
     color: #ffffff;
@@ -16,41 +16,62 @@ h1 {
     cursor: pointer;
 }
 
-h1:hover, h1:focus {
+.home-text:hover, .home-text:focus {
     transform: translate(0, -5px) scale(1.05);
 }
 
-.header {
+.header-img {
     height: 110px;
     border-radius: 50%;
 }
 
 .tab-container {
     position: absolute;
-    bottom: 0;
     right: 2%;
     width: 70%;
     max-width: 500px;
 }
 
+.bottom {
+    bottom: 0;
+}
+
+.top {
+    top: 0;
+}
+
 .tab {
     display: inline-block;
-    background-color: rgba(255, 255, 255, 0.2);
     text-align: center;
-    border-radius: 12px 12px 0 0;
     width: 45%;
     margin-right: 2%;
     transition: all ease-in-out 0.12s;
     cursor: pointer;
-    box-shadow: 5px -5px 15px rgba(0, 0, 0, 0.1);
     color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
     text-shadow: -10px -2px 20px rgba(0, 0, 0, 1);
 }
 
-.tab-text {
+.up {
+    border-radius: 12px 12px 0 0;
+    box-shadow: 5px -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.down {
+    border-radius: 0 0 12px 12px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.up .tab-text {
+    font-size: 20px;
     margin-top: 8px;
     margin-bottom: 5px;
-    font-size: 20px;
+}
+
+.down .tab-text {
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 7px;
 }
 
 .tab:hover, .tab:focus, .selected {
@@ -59,4 +80,54 @@ h1:hover, h1:focus {
     box-shadow: 5px -10px 10px rgba(0, 0, 0, 0.2);
     color: #000000;
     text-shadow: -10px -2px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Hidden Nav that appears and fixes to page when scrolling: */
+.hidden {
+    opacity: 0;
+}
+
+.bar-2 {
+    opacity: 1;
+    transition: all ease-in-out 1.2s;
+    /* background-image: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0)); */
+    background-image: linear-gradient(to left, rgb(139, 20, 20), rgb(0, 0, 0));
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    text-align: left;
+    position: fixed;
+    width: 100vw;
+    height: 38px;
+    top: 0;
+    animation-duration: 1s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+  
+@keyframes slidein {
+    from {
+      margin-top:-100px;
+    }
+    
+    to {
+      margin-top:0;
+    }
+}
+
+.bar-2 .home-text {
+    display: none;
+}
+
+@media only screen and (min-width: 800px) {
+    .bar-2 .home-text {
+        display: block;
+        font-size: 20px;
+        margin-left: 5%;
+        margin-top: 8px;
+    }
+    .bar-2 .home-text:hover, .home-text:focus {
+        transform: scale(1.1);
+    }
 }

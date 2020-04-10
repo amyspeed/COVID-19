@@ -2,12 +2,11 @@
     box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.5);
     background-color: white;
     width: 100%;
-    /* min-height: 350px; */
     border-radius: 10px;
     padding: 5px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     margin-bottom: 20px;
 }
 
@@ -15,22 +14,27 @@
     box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.5);
     background-color: white;
     width: 100%;
-    min-height: 350px;
     border-radius: 10px;
-    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10%;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-    height: 530px;
+    max-height: 530px;
     overflow-y: scroll;
 }
 
 .load-container {
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .important-text {
-    color: rgb(139, 20, 20);
+    color: #a70101;
     font-weight: bold;
+}
+
+.data-details {
+    margin-left: 14%;
 }

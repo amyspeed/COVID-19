@@ -32,6 +32,13 @@ class WorldMap extends React.Component {
         }
     }
 
+    customToolTip = (e, el, code) => {
+        if (this.state.mapData[code]) {
+            el.html(el.html()+ ': ' + this.state.mapData[code].toLocaleString());
+        }
+    }
+    
+
     render() {
         const countries = this.props.countries;
         return (
@@ -68,14 +75,15 @@ class WorldMap extends React.Component {
                                 selected: {
                                     fill: "#2938bc" //color for the clicked country
                                 },
-                                selectedHover: {}
+                                selectedHover: {},
                                 }}
                             regionsSelectable={false}
+                            onRegionTipShow={(e, el, code) => this.customToolTip(e, el, code) }
                             series={{
                                 regions: [
                                     {
                                         values: this.state.mapData, //this is your data
-                                        scale: ["#000000", "#ffffff"], //your color game's here
+                                        scale: ["#c6c6c6c", "#a70101"], //your color game's here
                                         normalizeFunction: "polynomial"
                                     }
                                 ]

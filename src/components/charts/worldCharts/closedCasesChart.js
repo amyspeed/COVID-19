@@ -45,7 +45,7 @@ class ClosedCasesChart extends React.Component {
 
     render() {
         const summery = this.props.summery;
-        const COLORS = ["#8b1414", "#5c5c5c"];
+        const COLORS = ["#a70101", "#c6c6c6"];
 
         return (
             <div className='chart-card'>
@@ -59,7 +59,7 @@ class ClosedCasesChart extends React.Component {
                         <h3>
                             Closed Cases <span className='important-text'>{ summery.data.deaths && summery.data.recovered ? this.totalClosed(summery.data.deaths, summery.data.recovered) : null }</span>
                         </h3>
-                        <div>
+                        <div className='data-details'>
                             { summery.data.deaths ? <p>Total Deaths: {summery.data.deaths.toLocaleString()}</p> : null }
                             { summery.data.recovered ? <p>Total Recovered: {summery.data.recovered.toLocaleString()}</p> : null }
                         </div>
