@@ -5,16 +5,29 @@ Created as a fun front end project during the Austin, TX "Shelter-in-place" orde
 
 **View Live: [https://covid-19.amyspeed.dev](https://covid-19.amyspeed.dev)**
 
-## Screenshot here
+## Landing
+
+![Landing](screenshots/landing.png)
+
+## World
+
+![World](screenshots/world.png)
+
+## USA
+
+![USA](screenshots/USA.png)
 
 ## Technologies
 * React
 * CSS
-* (Mapping/charting libraries)
+* React Router Dom
+* Redux
 
 ## 3RD Party APIs
-* https://corona.lmao.ninja
-* https://covid19api.com/?ref=producthunt#details
+* [Novel COVID API](https://corona.lmao.ninja)
+* [News API](https://newsapi.org)
+* [Recharts](https://recharts.org/en-US/)
+* [JVectorMap](https://jvectormap.com)
 
 ## Notes to self regarding deployment
 This project is hosted with github pages using a custom DNS. DNS records are managed by Google Domains.
