@@ -37,3 +37,33 @@ p {
   background-repeat: no-repeat;
   padding-bottom: 50px;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.news-img {
+  width: 100%;
+  height: auto;
+}
+
+.news-card {
+  box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  /* height: 0;
+  padding-top: 100%; */
+  margin-bottom: 20px;
+  min-height: 500px;
+  overflow: hidden;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+.news-card:hover {
+  transform: translate(0, -2px) scale(1.05);
+  box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.7);
+}

@@ -47,8 +47,24 @@ class Landing extends React.Component {
                 <NavBar pathName={this.props.match.path} goHome={this.goHome} goWorld={() => this.goWorld()} goUsa={() => this.goUsa()} />
                 <div className='content'>
                     <div className='row header-row'>
-                        <h2>Welcome and stuff</h2>
-                        <h3>Maybe some news and links here... </h3>
+                        <h2>Welcome</h2>
+                        <div className='row'>
+                            { 
+                                this.props.news && this.props.news.articles && this.props.news.articles.length > 0 ?
+                                this.props.news.articles.map((article, i) => <div className='col-4-b' key={i}>
+                                    <a href={article.url} target='_blank' rel='noopener noreferrer'>
+                                        <div className='news-card'>
+                                            <img className='news-img' src={article.urlToImage}/>
+                                            <h3>{article.title}</h3>
+                                            <p>{article.source.name}</p>
+                                            <p>{article && article.publishedAt ? new Date(article.publishedAt).toLocaleString() : null}</p>
+                                    </div>
+                                    </a>
+                                </div>)
+                                : null
+                            }
+
+                        </div>
                     </div>
                 </div>
             </div>

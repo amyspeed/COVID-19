@@ -17,6 +17,6 @@
     margin-bottom: 5px;
 }
 
-a {
-    color: #FFFFFF;
+.footer-link {
+    text-decoration: underline;
 }
