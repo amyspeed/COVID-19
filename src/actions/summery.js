@@ -1,3 +1,4 @@
+import { CORONA_NINJA_BASE_URL } from '../config';
 import normalizeResponseErrors from './utils';
 
 export const GET_SUMMERY_SUCCESS = 'GET_SUMMERY_SUCCESS';
@@ -13,7 +14,7 @@ export const getSummeryError = error => ({
 });
 
 export const getSummery = () => (dispatch) => {
-    return fetch('https://corona.lmao.ninja/all', {
+    return fetch(`${CORONA_NINJA_BASE_URL}/all`, {
         method: 'GET',
         headers: { 'Access-Control-Allow-Origin' : '*'}
     })

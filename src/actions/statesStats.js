@@ -1,3 +1,4 @@
+import { CORONA_NINJA_BASE_URL } from '../config';
 import normalizeResponseErrors from './utils';
 
 export const GET_STATES_SUCCESS = 'GET_STATES_SUCCESS';
@@ -13,7 +14,7 @@ export const getStatesError = error => ({
 });
 
 export const getStatesStats = () => (dispatch) => {
-    return fetch('https://corona.lmao.ninja/states', {
+    return fetch(`${CORONA_NINJA_BASE_URL}/states`, {
         method: 'GET',
         headers: { 'Access-Control-Allow-Origin' : '*'}
     })

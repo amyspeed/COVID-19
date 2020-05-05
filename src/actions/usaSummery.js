@@ -1,3 +1,4 @@
+import { CORONA_NINJA_BASE_URL } from '../config';
 import normalizeResponseErrors from './utils';
 
 export const GET_USA_SUMMERY_SUCCESS = 'GET_USA_SUMMERY_SUCCESS';
@@ -13,7 +14,7 @@ export const getUsaSummeryError = error => ({
 });
 
 export const getUsaSummery = () => (dispatch) => {
-    return fetch('https://corona.lmao.ninja/countries/USA', {
+    return fetch(`${CORONA_NINJA_BASE_URL}/countries/USA`, {
         method: 'GET',
         headers: { 'Access-Control-Allow-Origin' : '*'}
     })
