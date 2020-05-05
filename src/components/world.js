@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { fetchNews } from '../actions/news';
 import { fetchAllWorldData } from '../actions/worldData';
 import { fetchAllUsaData } from '../actions/usaData';
 import NavBar from './navBar';
@@ -11,30 +12,45 @@ import WorldMap from './charts/worldMap';
 
 class World extends React.Component {
 
-    componentDidMount() {
-        if (!this.props.summery.data || !this.props.summery.error) {
-            this.props.dispatch(fetchAllWorldData());
-        } else {
-            console.log(this.props.summery);
+    constructor(props){
+        super(props);
+        this.state = {
         }
+        this.goHome = this.goHome.bind(this);
+        this.goWorld = this.goWorld.bind(this);
+        this.goUsa = this.goUsa.bind(this);
     }
 
+    // componentDidMount() {
+    //     if (!this.props.summery.data || !this.props.summery.error) {
+    //         this.props.dispatch(fetchAllWorldData());
+    //     } else {
+    //         console.log(this.props.summery);
+    //     }
+    // }
+
     goHome = () => {
+        this.props.dispatch(fetchNews());
         this.props.history.push('/');
     }
 
     goWorld = () => {
-        // Already there! Refresh page and load data on componentDidMount
-        window.location.reload();
+        // Already there! Refresh data
+        this.props.dispatch(fetchAllWorldData());
     }
 
     goUsa = () => {
-        this.props.dispatch(fetchAllWorldData());
         this.props.dispatch(fetchAllUsaData());
         this.props.history.push('/usa');
     }
 
     render() {
+        if (!this.props.summery.data || !this.props.summery.error) {
+            this.props.dispatch(fetchAllWorldData());
+        } else {
+            console.log(this.props.summery);
+        }
+        
         return(
             <div>
                 <NavBar pathName={this.props.match.path} goHome={()=> this.goHome()} goWorld={() => this.goWorld()} goUsa={()=> this.goUsa()} />

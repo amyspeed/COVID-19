@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { fetchNews } from '../actions/news';
 import { fetchAllWorldData } from '../actions/worldData';
 import { fetchAllUsaData } from '../actions/usaData';
 import NavBar from './navBar';
@@ -11,16 +12,26 @@ import UsaMap from './charts/usaMap';
 
 class USA extends React.Component {
 
-    componentDidMount() {
-        this.props.dispatch(fetchAllWorldData());
-        if (!this.props.usaSummery.data || !this.props.usaSummery.error) {
-            this.props.dispatch(fetchAllUsaData());
-        } else {
-            console.log(this.props.usaSummery);
+    constructor(props){
+        super(props);
+        this.state = {
         }
+        this.goHome = this.goHome.bind(this);
+        this.goWorld = this.goWorld.bind(this);
+        this.goUsa = this.goUsa.bind(this);
+    }
+
+    componentDidMount() {
+        console.log(this.props.usaSummery);
+        // if (!this.props.usaSummery.data || !this.props.usaSummery.error) {
+        //     this.props.dispatch(fetchAllUsaData());
+        // } else {
+        //     console.log(this.props.usaSummery);
+        // }
     }
 
     goHome = () => {
+        this.props.dispatch(fetchNews());
         this.props.history.push('/');
     }
 
@@ -30,11 +41,17 @@ class USA extends React.Component {
     }
 
     goUsa() {
-        // Already there! Refresh
-        window.location.reload();
+        // Already there! Refresh data
+        this.props.dispatch(fetchAllUsaData());
     }
 
     render() {
+        if (!this.props.usaSummery.data || !this.props.usaSummery.error) {
+            this.props.dispatch(fetchAllUsaData());
+        } else {
+            console.log(this.props.usaSummery);
+        }
+
         return(
             <div>
                 <NavBar pathName={this.props.match.path} goHome={()=> this.goHome()} goWorld={()=>this.goWorld()} goUsa={this.goUsa} />

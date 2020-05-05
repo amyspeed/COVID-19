@@ -1,17 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import NavBar from './navBar';
+import { fetchNews } from '../actions/news';
 import { fetchAllWorldData } from '../actions/worldData';
 import { fetchAllUsaData } from '../actions/usaData';
 
 class Landing extends React.Component {
-
-    componentDidMount() {
+    
+    constructor(props){
+        super(props);
+        this.state = {
+        }
+        this.goHome = this.goHome.bind(this);
+        this.goWorld = this.goWorld.bind(this);
+        this.goUsa = this.goUsa.bind(this);
     }
 
     goHome() {
-        // Already home! Refresh
-        window.location.reload();
+        // Already home! Refresh Data
+        // window.location.reload();
+        this.props.dispatch(fetchNews());
     }
 
     goWorld = () => {
@@ -28,6 +36,12 @@ class Landing extends React.Component {
         if (this.props.showNavTwo) {
             console.log('show nav 2')
         }
+        if (!this.props.news) {
+            this.props.dispatch(fetchNews());
+        }
+        else {
+            console.log(this.props.news);
+        }
         return(
             <div>
                 <NavBar pathName={this.props.match.path} goHome={this.goHome} goWorld={() => this.goWorld()} goUsa={() => this.goUsa()} />
@@ -43,6 +57,7 @@ class Landing extends React.Component {
 }
 
 const mapStateToProps = state => ({
+    news: state.news.data
 });
 
 export default connect(mapStateToProps)(Landing);

@@ -15,7 +15,7 @@ class SummeryChart extends React.Component {
                                 <ScaleLoader color={'#757575'} />
                             </div> : null
                         }
-                        { summery.data && summery.data.cases ? <p><span className='important-text'>{summery.data.cases.toLocaleString()}</span> Confirmed Cases</p> : null }
+                        { summery.data ? <p><span className='important-text'>{summery.data.cases.toLocaleString()}</span> Confirmed Cases</p> : null }
                     </div>
                 </div>
                 <div className='col-4'>
@@ -25,7 +25,7 @@ class SummeryChart extends React.Component {
                                 <ScaleLoader color={'#757575'} />
                             </div> : null
                         }
-                        { summery.data && summery.data.deaths ? <p><span className='important-text'>{summery.data.deaths.toLocaleString()}</span> Total Deaths</p> : null }
+                        { summery.data ? <p><span className='important-text'>{summery.data.deaths.toLocaleString()}</span> Total Deaths</p> : null }
                     </div>
                 </div>
                 <div className='col-4'>
@@ -35,7 +35,7 @@ class SummeryChart extends React.Component {
                                 <ScaleLoader color={'#757575'} />
                             </div> : null
                         }
-                        { summery.data && summery.data.todayCases ? <p><span className='important-text'>{summery.data.todayCases.toLocaleString()}</span> New Cases Today</p> : null }
+                        { summery.data ? <p><span className='important-text'>{summery.data.todayCases.toLocaleString()}</span> New Cases Today</p> : null }
                     </div>
                 </div>
             </div>
