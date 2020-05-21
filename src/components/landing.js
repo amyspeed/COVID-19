@@ -54,7 +54,7 @@ class Landing extends React.Component {
                                 this.props.news.articles.map((article, i) => <div className='col-4-b' key={i}>
                                     <a href={article.url} target='_blank' rel='noopener noreferrer'>
                                         <div className='news-card'>
-                                            <img className='news-img' src={article.urlToImage}/>
+                                            <img className='news-img' src={article.urlToImage} alt='news' />
                                             <h3>{article.title}</h3>
                                             <p>{article.source.name}</p>
                                             <p>{article && article.publishedAt ? new Date(article.publishedAt).toLocaleString() : null}</p>
