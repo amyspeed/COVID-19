@@ -48,7 +48,7 @@ class World extends React.Component {
         if (!this.props.summery.data || !this.props.summery.error) {
             this.props.dispatch(fetchAllWorldData());
         } else {
-            console.log(this.props.summery);
+            // console.log(this.props.summery);
         }
         
         return(

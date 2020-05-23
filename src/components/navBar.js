@@ -20,13 +20,13 @@ class NavBar extends React.Component {
     _handleScroll() {
         // If not at the top of the page, begin showing the hidden nav bar
         if (this.state.showNavTwo && window.pageYOffset < 90) {
-            console.log('dont show nav 2!!')
+            // console.log('dont show nav 2!!')
             this.setState({
                 showNavTwo: false
             })
         }
         else if (!this.state.showNavTwo && window.pageYOffset >= 90) {
-            console.log('NOW!!')
+            // console.log('NOW!!')
             this.setState({
                 showNavTwo: true
             })

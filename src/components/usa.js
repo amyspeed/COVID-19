@@ -22,7 +22,7 @@ class USA extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.usaSummery);
+        // console.log(this.props.usaSummery);
         // if (!this.props.usaSummery.data || !this.props.usaSummery.error) {
         //     this.props.dispatch(fetchAllUsaData());
         // } else {
@@ -49,7 +49,7 @@ class USA extends React.Component {
         if (!this.props.usaSummery.data || !this.props.usaSummery.error) {
             this.props.dispatch(fetchAllUsaData());
         } else {
-            console.log(this.props.usaSummery);
+            // console.log(this.props.usaSummery);
         }
 
         return(

@@ -20,7 +20,7 @@ class ClosedCasesChart extends React.Component {
                 data: [{ name: 'Deaths', value: this.props.summery.data.deaths}, { name: 'Recoveries', value: this.props.summery.data.recovered}],
                 updated: true
             })
-            console.log(this.state.data);
+            // console.log(this.state.data);
         }
     }
 

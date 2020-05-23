@@ -24,7 +24,7 @@ class WorldMap extends React.Component {
                 newObj[key] = this.props.countries.data[i].cases;
                 dataObj = Object.assign(dataObj, newObj);
             }
-            console.log(dataObj);
+            // console.log(dataObj);
             this.setState({
                 mapData: dataObj,
                 updated: true

@@ -34,13 +34,13 @@ class Landing extends React.Component {
 
     render() {
         if (this.props.showNavTwo) {
-            console.log('show nav 2')
+            // console.log('show nav 2')
         }
         if (!this.props.news) {
             this.props.dispatch(fetchNews());
         }
         else {
-            console.log(this.props.news);
+            // console.log(this.props.news);
         }
         return(
             <div>

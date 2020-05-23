@@ -93,7 +93,7 @@ class UsaMap extends React.Component {
                 // Add the new object into our larger data object
                 dataObj = Object.assign(dataObj, newObj);
             }
-            console.log(dataObj);
+            // console.log(dataObj);
             this.setState({
                 mapData: dataObj,
                 updated: true

@@ -21,7 +21,7 @@ class ActiveCasesChart extends React.Component {
                 data: [{ name: 'Critical/Serious', value: this.props.summery.data.critical}, { name: 'Mild Infections', value: mild}],
                 updated: true
             })
-            console.log(this.state.data);
+            // console.log(this.state.data);
         }
     }
 
