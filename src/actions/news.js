@@ -1,4 +1,4 @@
-import { NEWS_BASE_URL, CORS_PROXY } from '../config';
+import { NEWS_BASE_URL } from '../config';
 import normalizeResponseErrors from './utils';
 
 export const GET_NEWS_SUCCESS = 'GET_NEWS_SUCCESS';
