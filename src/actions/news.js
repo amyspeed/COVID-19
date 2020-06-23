@@ -1,4 +1,4 @@
-import { NEWS_BASE_URL } from '../config';
+import { NEWS_BASE_URL, CORS_PROXY } from '../config';
 import normalizeResponseErrors from './utils';
 
 export const GET_NEWS_SUCCESS = 'GET_NEWS_SUCCESS';
@@ -14,7 +14,7 @@ export const getNewsError = error => ({
 });
 
 export const fetchNews = () => (dispatch) => {
-    return fetch(`${NEWS_BASE_URL}?q=COVID&language=en&sortBy=publishedAt&pageSize=6&page=1`, {
+    return fetch(`${CORS_PROXY + NEWS_BASE_URL}?q=COVID&language=en&sortBy=publishedAt&pageSize=6&page=1`, {
         method: 'GET',
         headers: { 
             Authorization: 'Bearer 9d728f0139044cf3a54a15e546d1851e',
