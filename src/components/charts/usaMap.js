@@ -148,11 +148,11 @@ class UsaMap extends React.Component {
                                 }}
                             regionsSelectable={false}
                             onRegionTipShow={(e, el, code) => this.customToolTip(e, el, code) }
-                            mapUrlByCode = {function(code, multiMap){
-                                return '/js/us-counties/jquery-jvectormap-data-'+
-                                       code.toLowerCase()+'-'+
-                                       multiMap.defaultProjection+'-en.js';
-                              }}
+                            // mapUrlByCode = {function(code, multiMap){
+                            //     return '/js/us-counties/jquery-jvectormap-data-'+
+                            //            code.toLowerCase()+'-'+
+                            //            multiMap.defaultProjection+'-en.js';
+                            //   }}
                             series={{
                                 regions: [
                                     {
