@@ -46,7 +46,7 @@ class USA extends React.Component {
     }
 
     render() {
-        if (!this.props.usaSummery.data || !this.props.usaSummery.error) {
+        if (!this.props.usaSummery.data && !this.props.usaSummery.error) {
             this.props.dispatch(fetchAllUsaData());
         } else {
             // console.log(this.props.usaSummery);

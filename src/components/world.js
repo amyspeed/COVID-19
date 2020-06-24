@@ -37,6 +37,7 @@ class World extends React.Component {
     goWorld = () => {
         // Already there! Refresh data
         this.props.dispatch(fetchAllWorldData());
+        console.log('fetch from goWorld')
     }
 
     goUsa = () => {
@@ -45,8 +46,9 @@ class World extends React.Component {
     }
 
     render() {
-        if (!this.props.summery.data || !this.props.summery.error) {
+        if (!this.props.summery.data && !this.props.summery.error) {
             this.props.dispatch(fetchAllWorldData());
+            console.log('fetch from render')
         } else {
             // console.log(this.props.summery);
         }

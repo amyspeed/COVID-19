@@ -38,3 +38,18 @@
 .data-details {
     margin-left: 14%;
 }
+
+.jvectormap-tip {
+    position: absolute;
+    display: none;
+    border: solid 1px rgb(255, 255, 255);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #000000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 13px;
+    padding: 5px;
+    z-index:11;
+ }

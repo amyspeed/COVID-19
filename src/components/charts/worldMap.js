@@ -33,7 +33,10 @@ class WorldMap extends React.Component {
     }
 
     customToolTip = (e, el, code) => {
-        if (this.state.mapData[code]) {
+        if (!this.state.updated) {
+            e.preventDefault();
+        }
+        else if (this.state.mapData[code]) {
             el.html(el.html()+ ': ' + this.state.mapData[code].toLocaleString());
         }
     }
