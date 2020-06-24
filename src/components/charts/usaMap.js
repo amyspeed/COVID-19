@@ -102,11 +102,16 @@ class UsaMap extends React.Component {
     }
 
     customToolTip = (e, el, code) => {
-        if(!this.state.updated) {
-            e.preventDefault();
-        }
-        else if (this.state.mapData[code]) {
+        if (this.state.mapData[code] && this.state.updated) {
             el.html(el.html()+ ': ' + this.state.mapData[code].toLocaleString());
+
+            setTimeout(()=> { 
+                Array.from(document.getElementsByClassName("jvectormap-tip"))
+                    .forEach((el) => { el.style.display = 'none' }); 
+            }, 10000);
+        }
+        else {
+            e.preventDefault();
         }
     }
     
